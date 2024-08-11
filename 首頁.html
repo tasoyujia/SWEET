@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 引入Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <!-- 引入Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <style>
+      /* 動畫效果 */
+      .menu {
+        width: 100%;
+        display: flex;
+        background: #ff6600;
+        height: 500px;
+        border-radius: 20px;
+        animation-name: pic;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        position: relative;
+        color: white; /* 文本颜色 */
+        font-size: 2rem; /* 文本大小 */
+        font-weight: bold; /* 文本粗细 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文本阴影 */
+      }
+      .menu-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      @keyframes pic {
+        0% {
+          background: url(images/1.jpg) center/cover;
+        }
+        25% {
+          background: url(images/2.jpg) center/cover;
+        }
+        50% {
+          background: url(images/3.jpg) center/cover;
+        }
+        100% {
+          background: url(images/4.jpg) center/cover;
+        }
+      }
+      /* 以下是首頁架構 */
+      /* 新增的CSS樣式 */
+      /* 整體布局 */
+      .container {
+        max-width: 1500px; /* 控制內容最大寬度 */
+        margin: 0 auto; /* 水平居中 */
+      }
+      /* 文字寬 */
+      .container2 {
+        max-width: 1500px; /* 控制內容最大寬度 */
+        margin: 0 auto; /* 水平居中 */
+        margin-bottom: 100px;
+      }
+      .container3 {
+        max-width: 1500px; /* 控制內容最大寬度 */
+        margin: 0 auto; /* 水平居中 */
+        margin-bottom: 100px;
+      }
+      /* 導航欄修飾 */
+      .navbar {
+        padding: 10px 0;
+      }
+      .navbar li {
+        display: inline;
+        margin-right: 20px;
+      }
+      .navbar li a {
+        text-decoration: none;
+      }
+      #login a {
+        text-decoration: none;
+      }
+      /* 英雄區塊修飾 */
+      .hero {
+        margin-top: 20px; /* 加大與導航欄之間的間距 */
+        margin-bottom: 100px;
+      }
+      .hero img {
+        height: 600px;
+        width: 1500px;
+      }
+      /* 產品區塊修飾 */
+      .products {
+        margin-top: 50px; /* 與上一區塊之間的間距 */
+      }
+
+      /* 關於我們和聯繫我們區塊修飾 */
+      .about,
+      .contact {
+        margin-top: 50px; /* 與上一區塊之間的間距 */
+        text-align: center;
+      }
+      .about p,
+      .contact p {
+        line-height: 1.6; /* 行高增加可讀性 */
+        text-align: center;
+      }
+      .about h2,
+      .contact h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      /* h3 {
+        font-size: 1.25em;
+      } */
+      /* 最新消息修飾 */
+      .latest-news {
+        margin-top: 50px; /* 與上一區塊之間的間距 */
+      }
+      /* .latest-news li {
+        background-color: #f9f9f9;
+      } */
+      /* 將圖片大小的樣式添加到 CSS 中 */
+      .latest-news .card-img-top .products {
+        max-width: 70%; /* 圖片最大寬度為其容器的寬度 */
+        max-height: 70%; /* 圖片最大高度為其容器的高度 */
+        border-radius: 10px; /* 圖片圓角 */
+        display: block; /* Set image to be a block element */
+        margin: auto; /* Center the image horizontally */
+      }
+
+      .card {
+        margin-bottom: 20px; /* 卡片間的間距 */
+      }
+
+      .card-title {
+        font-size: 1.25rem; /* 標題字體大小 */
+        text-align: center;
+      }
+
+      .card-text {
+        color: #666; /* 內文顏色 */
+        font-size: 18.5px;
+      }
+
+      .card-img-top {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .btn-primary {
+        background-color: #ff6600;
+        border-color: #ff6600;
+        width: 100%;
+      }
+
+      .btn-primary:hover {
+        background-color: #e65300;
+        border-color: #e65300;
+      }
+
+      /* 頁腳修飾 */
+      footer {
+        margin-top: 50px; /* 與上一區塊之間的間距 */
+        padding: 20px 0;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+      footer p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-2">
+            <!-- 左側圖標 -->
+            <img src="images/logo2.png " alt="圖標" width="50" />
+            <h10>SWEET</h10>
+          </div>
+          <div class="col-8 text-center">
+            <!-- 中間導航 -->
+            <ul class="list-inline navbar">
+              <li class="list-inline-item vertical-line">
+                <a href="#">產品介紹</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">最新消息</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">關於我們</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">聯絡我們</a>
+              </li>
+              <form class="form-inline my-2 my-lg-0">
+                <input type="text" placeholder="搜尋" class="form-control" />
+              </form>
+            </ul>
+          </div>
+          <div class="col-2 text-right" id="login">
+            <a href="#"><i class="fas fa-user"></i> 註冊</a> /
+            <a href="#"><i class="fas fa-sign-in-alt"></i>登錄</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="menu">
+        <div class="menu-text object-fit-cover">歡迎來到甜品小屋</div>
+      </div>
+
+      <section class="products">
+        <h2 class="">最新甜品</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="images/1.jpg"
+                class="card-img-top"
+                alt="Dessert Image 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">巧克力熔岩蛋糕</h5>
+                <p class="card-text text-center">TWD:23000</p>
+                <a href="#" class="btn btn-primary">了解更多</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="images/2.jpg"
+                class="card-img-top"
+                alt="Dessert Image 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">草莓起司蛋糕</h5>
+                <p class="card-text text-center">TWD:23000</p>
+                <a href="#" class="btn btn-primary">了解更多</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="images/3.jpg"
+                class="card-img-top"
+                alt="Dessert Image 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">藍莓起司蛋糕</h5>
+                <p class="card-text text-center">TWD:23000</p>
+                <a href="#" class="btn btn-primary">了解更多</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="images/4.jpg"
+                class="card-img-top"
+                alt="Dessert Image 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">芒果慕斯蛋糕</h5>
+                <p class="card-text text-center">TWD:23000</p>
+                <a href="#" class="btn btn-primary">了解更多</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="latest-news">
+        <div class="container3">
+          <h2 class="">最新甜品</h2>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news1.jpg"
+                  class="card-img-top"
+                  alt="最新消息1"
+                />
+                <div class="card-body">
+                  <h3>芋泥蛋糕新品上市！</h3>
+                  <p class="card-text">
+                    近日推出新品芋泥蛋糕，以香濃芋泥搭配鬆軟蛋糕體，擄獲芋頭控的味蕾。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news2.jpg"
+                  class="card-img-top"
+                  alt="最新消息2"
+                />
+                <div class="card-body">
+                  <h3>獲選為亞洲最佳甜點店</h3>
+                  <p class="card-text">
+                    近日獲選為亞洲最佳甜點店之一，以精緻的甜點和優質的服務獲得肯定。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news3.jpg"
+                  class="card-img-top"
+                  alt="最新消息3"
+                />
+                <div class="card-body">
+                  <h3>推出限時優惠：買一送一</h3>
+                  <p class="card-text">
+                    近日推出限時優惠，凡購買指定甜點，即可享有買一送一優惠。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news3.jpg"
+                  class="card-img-top"
+                  alt="最新消息3"
+                />
+                <div class="card-body">
+                  <h3>推出限時優惠：買一送一</h3>
+                  <p class="card-text">
+                    近日推出限時優惠，凡購買指定甜點，即可享有買一送一優惠。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <section class="latest-news">
+        <div class="container3">
+          <h2>最新消息</h2>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news1.jpg"
+                  class="card-img-top"
+                  alt="最新消息1"
+                />
+                <div class="card-body">
+                  <h3>芋泥蛋糕新品上市！</h3>
+                  <p class="card-text">
+                    近日推出新品芋泥蛋糕，以香濃芋泥搭配鬆軟蛋糕體，擄獲芋頭控的味蕾。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news2.jpg"
+                  class="card-img-top"
+                  alt="最新消息2"
+                />
+                <div class="card-body">
+                  <h3>獲選為亞洲最佳甜點店</h3>
+                  <p class="card-text">
+                    近日獲選為亞洲最佳甜點店之一，以精緻的甜點和優質的服務獲得肯定。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news3.jpg"
+                  class="card-img-top"
+                  alt="最新消息3"
+                />
+                <div class="card-body">
+                  <h3>推出限時優惠：買一送一</h3>
+                  <p class="card-text">
+                    近日推出限時優惠，凡購買指定甜點，即可享有買一送一優惠。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img
+                  src="images/news3.jpg"
+                  class="card-img-top"
+                  alt="最新消息3"
+                />
+                <div class="card-body">
+                  <h3>推出限時優惠：買一送一</h3>
+                  <p class="card-text">
+                    近日推出限時優惠，凡購買指定甜點，即可享有買一送一優惠。
+                  </p>
+                  <a href="#" class="btn btn-primary">了解更多</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container2">
+          <h2>關於我們</h2>
+          <p>
+            歡迎來到我們的甜點天堂！ SWEET<br />
+            致力於為您帶來最美味的甜品和糕點。<br />我們的故事始於十年前，當時一個對美食充滿熱情的小團隊決定將自己的烹飪技巧和創意結合起來，創造出一個獨一無二的甜點品牌。<br />從那時起，我們不斷努力，以不斷創新和提高的精神，為客戶提供高品質的甜點體驗。<br />
+            我們深信，美味的甜點不僅僅是味覺的享受，更是一種生活方式和文化的體現。<br />因此，我們致力於選擇最優質的食材，結合傳統技術和現代創新，打造出獨一無二的甜品系列。<br />無論您是在尋找優雅的蛋糕、濃郁的巧克力、或是清爽的冰淇淋，我們都能滿足您的味蕾。<br />
+            除了提供美味的甜點外，我們還致力於通過可持續的業務實踐和社區參與，為社會做出積極的貢獻。<br />我們將繼續努力，成為您信任和喜愛的甜品品牌，並與您一同分享甜蜜的時刻。<br />
+            感謝您的支持和信任.<br />
+          </p>
+        </div>
+      </section>
+      <section class="contact">
+        <div class="container2">
+          <h2>聯絡方式</h2>
+          <p>
+            我們很樂意聽取您的意見和建議，以及回答您的任何疑問。您可以通過以下方式與我們聯繫。
+          </p>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: info@sweet.com</p>
+            <p><i class="fas fa-phone"></i> 電話: +1234567890</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 地址:
+              甜品天堂路1號，甜品城，甜品國
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright © 2023 甜品網站</p>
+    </footer>
+  </body>
+</html>

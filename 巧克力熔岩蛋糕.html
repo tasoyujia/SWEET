@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>巧克力熔岩蛋糕</title>
+    <!-- 引入Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <!-- 引入Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <style>
+      /* 導航欄修飾 */
+      .navbar {
+        padding: 10px 0;
+      }
+      .navbar li {
+        display: inline;
+        margin-right: 20px;
+      }
+      .navbar li a {
+        text-decoration: none;
+      }
+      #login a {
+        text-decoration: none;
+      }
+      .col-5 img {
+        width: 100%;
+        border-radius: 40px;
+        box-shadow: 10px 10px 10px grey;
+      }
+      /* 金額 */
+      span {
+        font-size: 20px;
+        color: rgb(143, 122, 2);
+      }
+
+      /* 選單 */
+      table {
+        border-collapse: collapse;
+        width: 50%;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+      /* 頁腳修飾 */
+      footer {
+        margin-top: 50px; /* 與上一區塊之間的間距 */
+        padding: 20px 0;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+      footer p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-2">
+            <!-- 左側圖標 -->
+            <img src="images/logo2.png " alt="圖標" width="50" />
+            <h10>SWEET SHOP</h10>
+          </div>
+          <div class="col-8 text-center">
+            <!-- 中間導航 -->
+            <ul class="list-inline navbar">
+              <li class="list-inline-item vertical-line">
+                <a href="https://tasoyujia.github.io/SWEET/">首頁</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">產品介紹</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">最新消息</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">關於我們</a>
+              </li>
+              <li class="list-inline-item vertical-line">
+                <a href="#">聯絡我們</a>
+              </li>
+              <form class="form-inline my-2 my-lg-0">
+                <input type="text" placeholder="搜尋" class="form-control" />
+              </form>
+            </ul>
+          </div>
+          <div class="col-2 text-right" id="login">
+            <a href="#"><i class="fas fa-user"></i> 註冊</a> /
+            <a href="#"><i class="fas fa-sign-in-alt"></i>登錄</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-5 p-5">
+          <img src="images/巧克力熔岩蛋糕.jpg" alt="" />
+        </div>
+        <div class="col-7 p-5">
+          <h2>巧克力熔岩蛋糕<span> 商品金額: 1400</span></h2>
+
+          <p class="p-2">
+            本甜點為現做商品，製作需時2個工作天（不含訂購當天）。為確保口感最佳，建議您於收到商品後當日內享用完畢，尤其是包含冰淇淋的產品，請盡速食用以免融化。
+          </p>
+          <hr />
+          <p class="p-2">
+            每一口熔岩巧克力蛋糕，都是一次驚喜。外層蛋糕如同一層薄薄的巧克力外殼，輕輕一咬，便能感受到蛋糕體的綿密濕潤。
+            <br />
+            當刀子劃開蛋糕的那一刻，深褐色的巧克力岩漿緩緩流出，彷彿火山爆發般壯觀。
+            <br />
+            濃郁的巧克力香氣撲鼻而來，搭配香草冰淇淋的清甜，口感層次豐富，令人回味無窮。
+          </p>
+          <hr />
+          <form class="p-2">
+            <table>
+              <tr>
+                <th>規格</th>
+                <td>
+                  <select name="" id="">
+                    <option value="">7吋</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>確認可訂購日期</th>
+                <td>
+                  <input type="date" id="orderDate" />
+                </td>
+              </tr>
+              <tr>
+                <th>訂購數量</th>
+                <td>
+                  <input type="number" id="quantity" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>自取門市</th>
+                <td>
+                  <select id="store">
+                    <option value="renaissance">仁愛門市</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>選擇自取日期</th>
+                <td>
+                  <input type="date" id="pickupDate" />
+                </td>
+              </tr>
+              <tr>
+                <th>選擇自取時段</th>
+                <td>
+                  <select id="pickupTime">
+                    <option value="morning">上午</option>
+                    <option value="afternoon">下午</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <hr />
+
+            <!-- <button type="button" class="btn btn-primary btn-sm">
+              確認訂購
+            </button> -->
+            <button type="button" class="btn btn-outline-secondary">
+              確認訂購
+            </button>
+            <button type="button" class="btn btn-outline-secondary">
+              加入購物車
+            </button>
+          </form>
+
+          <script>
+            // JavaScript 可以用來驗證輸入資料、計算總價等
+            // 例如：
+            const orderDate = document.getElementById("orderDate");
+            orderDate.addEventListener("change", () => {
+              // 在這裡加上確認可訂購日期的邏輯，比如檢查庫存、限制訂購時間等
+              alert("您選擇的訂購日期為：" + orderDate.value);
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright © 2023 甜品網站</p>
+    </footer>
+  </body>
+</html>

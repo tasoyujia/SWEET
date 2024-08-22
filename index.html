@@ -22,7 +22,7 @@
         width: 100%;
         display: flex;
         background: #ff6600;
-        height: 500px;
+        height: 200px;
         border-radius: 20px;
         animation-name: pic;
         animation-duration: 20s;
@@ -32,6 +32,7 @@
         font-size: 2rem; /* 文本大小 */
         font-weight: bold; /* 文本粗细 */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文本阴影 */
+        margin-bottom: 200px;
       }
       .menu-text {
         position: absolute;
@@ -60,6 +61,7 @@
       .container {
         max-width: 1500px; /* 控制內容最大寬度 */
         margin: 0 auto; /* 水平居中 */
+        /* margin-bottom: 200px; */
       }
       /* 文字寬 */
       .container2 {
@@ -97,13 +99,13 @@
       }
       /* 產品區塊修飾 */
       .products {
-        margin-top: 50px; /* 與上一區塊之間的間距 */
+        margin-top: 100px; /* 與上一區塊之間的間距 */
       }
 
       /* 關於我們和聯繫我們區塊修飾 */
       .about,
       .contact {
-        margin-top: 50px; /* 與上一區塊之間的間距 */
+        margin-top: 100px; /* 與上一區塊之間的間距 */
         text-align: center;
       }
       .about p,
@@ -120,12 +122,10 @@
         text-align: center;
         margin-bottom: 30px;
       }
-      /* h3 {
-        font-size: 1.25em;
-      } */
+
       /* 最新消息修飾 */
       .latest-news {
-        margin-top: 50px; /* 與上一區塊之間的間距 */
+        margin-top: 100px; /* 與上一區塊之間的間距 */
       }
       /* .latest-news li {
         background-color: #f9f9f9;
@@ -141,6 +141,7 @@
 
       .card {
         margin-bottom: 20px; /* 卡片間的間距 */
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
       }
 
       .card-title {
@@ -189,7 +190,7 @@
           <div class="col-2">
             <!-- 左側圖標 -->
             <img src="images/logo2.png " alt="圖標" width="50" />
-            <h10>SWEET</h10>
+            <h10>SWEET SHOP</h10>
           </div>
           <div class="col-8 text-center">
             <!-- 中間導航 -->
@@ -220,7 +221,7 @@
     </header>
     <main>
       <div class="menu">
-        <div class="menu-text object-fit-cover">歡迎來到甜品小屋</div>
+        <div class="menu-text object-fit-cover">歡迎來到SWEET SHOP</div>
       </div>
 
       <section class="products">
@@ -284,77 +285,7 @@
           </div>
         </div>
       </section>
-      <!-- <section class="latest-news">
-        <div class="container3">
-          <h2 class="">最新甜品</h2>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card">
-                <img
-                  src="images/news1.jpg"
-                  class="card-img-top"
-                  alt="最新消息1"
-                />
-                <div class="card-body">
-                  <h3>芋泥蛋糕新品上市！</h3>
-                  <p class="card-text">
-                    近日推出新品芋泥蛋糕，以香濃芋泥搭配鬆軟蛋糕體，擄獲芋頭控的味蕾。
-                  </p>
-                  <a href="#" class="btn btn-primary">了解更多</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img
-                  src="images/news2.jpg"
-                  class="card-img-top"
-                  alt="最新消息2"
-                />
-                <div class="card-body">
-                  <h3>獲選為亞洲最佳甜點店</h3>
-                  <p class="card-text">
-                    近日獲選為亞洲最佳甜點店之一，以精緻的甜點和優質的服務獲得肯定。
-                  </p>
-                  <a href="#" class="btn btn-primary">了解更多</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img
-                  src="images/news3.jpg"
-                  class="card-img-top"
-                  alt="最新消息3"
-                />
-                <div class="card-body">
-                  <h3>推出限時優惠：買一送一</h3>
-                  <p class="card-text">
-                    近日推出限時優惠，凡購買指定甜點，即可享有買一送一優惠。
-                  </p>
-                  <a href="#" class="btn btn-primary">了解更多</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img
-                  src="images/news3.jpg"
-                  class="card-img-top"
-                  alt="最新消息3"
-                />
-                <div class="card-body">
-                  <h3>推出限時優惠：買一送一</h3>
-                  <p class="card-text">
-                    近日推出限時優惠，凡購買指定甜點，即可享有買一送一優惠。
-                  </p>
-                  <a href="#" class="btn btn-primary">了解更多</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
+
       <section class="latest-news">
         <div class="container3">
           <h2>最新消息</h2>
@@ -428,6 +359,7 @@
       </section>
 
       <section class="about">
+        <hr />
         <div class="container2">
           <h2>關於我們</h2>
           <p>
@@ -441,6 +373,7 @@
       </section>
       <section class="contact">
         <div class="container2">
+          <hr />
           <h2>聯絡方式</h2>
           <p>
             我們很樂意聽取您的意見和建議，以及回答您的任何疑問。您可以通過以下方式與我們聯繫。
